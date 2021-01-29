@@ -1,0 +1,29 @@
+<div class="container">
+    <form #loginForm='ngForm'  class="login">
+      <h4 class="login__header">
+        I'M A RETURNING CUSTOMER
+      </h4>
+      <div class="form-group" [ngClass]='{"invalid" : Uname.invalid && Uname.touched}'>
+        <label for="">Username or E-mail Address</label>
+        <input required minlength="8" maxlength="30" [(ngModel)]='person.email' #Uname='ngModel' class="form-control" type="text" name="email"
+          id="">
+      </div>
+      <div class="form-group login__Password" [ngClass]='{"invalid" : password.invalid && password.touched}'>
+        <a href="#" class="login__forget-password">(Forget Password?)</a>
+        <label for="">Password</label>
+        <input required minlength="8" maxlength="10" [(ngModel)]='person.password' #password='ngModel' class="form-control"
+          type="text" name="password"
+          id="">
+      </div>
+      <div class="login__remember-me">
+        <div class="form-group__checkbox"><input type="checkbox" name="" id="">
+          <span>Remember Me</span>
+        </div>
+        <div class="add-product__actions">
+          <button href="#" class="btn btn--gray">Cancel</button>
+          <button href="#" type="submit" class="btn btn--primary" (click)='onSubmit()'>Login</button>
+        </div>
+      </div>
+      <a class="login__register-now" routerLink='/register'>Register Now</a>
+    </form>
+  </div>
